@@ -15,7 +15,7 @@
 - utilize Log Search query functions
 - view alerts in Azure Monitor logs
 - visualize diagnostics data using Azure Monitor Workbooks
-## Create and configure storage accounts
+## [Create and configure storage accounts](https://docs.microsoft.com/en-au/learn/paths/architect-storage-infrastructure/)
 - configure network access to the storage account
 - create and configure storage account
 - generate shared access signature
@@ -62,7 +62,6 @@
 - create Azure Resource Manager templates
 - configure Azure Disk Encryption for VMs
 - implement Azure Backup for VMs
-## 
 # Implement workloads and security (20-25%)
 ## Migrate servers to Azure
 - migrate servers using Azure Migrate
@@ -97,7 +96,25 @@
 - troubleshoot RBAC
 - implement Azure policies
 - assign RBAC roles
-## 
+
+# Develop for the cloud and for Azure storage (20-25%)
+## Develop solutions that use Cosmos DB storage
+- create, read, update, and delete data by using appropriate APIs
+- implement partitioning schemes
+- set the appropriate consistency level for operations
+## Develop solutions that use a relational database
+- provision and configure relational databases
+- configure elastic pools for Azure SQL Database
+- implement Azure SQL Database managed instances
+- create, read, update, and delete data tables by using code
+## Configure a message-based integration architecture
+- configure an app or service to send emails, Event Grid, and the Azure Relay service
+- create and configure Notification Hub, Event Hub, and Service Bus
+- configure queries across multiple products
+## Develop for autoscaling
+- implement autoscaling rules and patterns (schedule, operational/system metrics, code that addresses singleton application instances)
+- implement code that addresses transient state
+
 # Create and deploy apps (5-10%)
 ## Create web apps by using PaaS
 - create an Azure App Service Web App
@@ -125,20 +142,4 @@
 - implement Azure Confidential Compute and SSL/TLS communications
 - create, read, update, and delete keys, secrets, and certificates by using the KeyVault API
 
-# Develop for the cloud and for Azure storage (20-25%)
-## Develop solutions that use Cosmos DB storage
-- create, read, update, and delete data by using appropriate APIs
-- implement partitioning schemes
-- set the appropriate consistency level for operations
-## Develop solutions that use a relational database
-- provision and configure relational databases
-- configure elastic pools for Azure SQL Database
-- implement Azure SQL Database managed instances
-- create, read, update, and delete data tables by using code
-## Configure a message-based integration architecture
-- configure an app or service to send emails, Event Grid, and the Azure Relay service
-- create and configure Notification Hub, Event Hub, and Service Bus
-- configure queries across multiple products
-## Develop for autoscaling
-- implement autoscaling rules and patterns (schedule, operational/system metrics, code that addresses singleton application instances)
-- implement code that addresses transient state
+
