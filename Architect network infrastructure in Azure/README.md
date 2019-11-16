@@ -90,4 +90,6 @@ $("a.is-block").each(function( index ) {
   }
 });
 console.log(str)
+
+$(".module-time-remaining").each(function(){console.log(this.innerText)})
 ```
