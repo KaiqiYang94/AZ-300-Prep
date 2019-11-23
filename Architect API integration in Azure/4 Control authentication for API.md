@@ -1,0 +1,8 @@
+# [Control authentication for your APIs with Azure API Management](https://docs.microsoft.com/en-au/learn/modules/control-authentication-with-apim/index)
+- [Introduction](https://docs.microsoft.com/en-au/learn/modules/control-authentication-with-apim/1-introduction/)
+- [What is API Management?](https://docs.microsoft.com/en-au/learn/modules/control-authentication-with-apim/1a-understand-apim/)
+- [Create subscriptions in Azure API Management](https://docs.microsoft.com/en-au/learn/modules/control-authentication-with-apim/2-create-subscriptions-in-apim/)
+- [Exercise - Create subscriptions in Azure API Management](https://docs.microsoft.com/en-au/learn/modules/control-authentication-with-apim/3-exercise-create-subscriptions-in-apim/)
+- [Use client certificates to secure access to an API](https://docs.microsoft.com/en-au/learn/modules/control-authentication-with-apim/4-secure-access-client-certs/)
+- [Exercise - Use client certificates to secure access to an API](https://docs.microsoft.com/en-au/learn/modules/control-authentication-with-apim/5-exercise-secure-access-client-certs/)
+- [Summary](https://docs.microsoft.com/en-au/learn/modules/control-authentication-with-apim/6-summary/)
