@@ -114,8 +114,24 @@
 # Planning for Integration with Monitoring Tools: On-premises & 3rd Party
 40m 35s
 
+
 ## Diag-Storage-Integration
 10m 2s
+- Third-Party Monitoring & Logging Solutions
+  - Splunk Enterprise
+  - Elastic Stack
+  - Alert Logic
+  - NewRelic
+- Diagnostic Integration
+  - Log Ingestion
+    - Azure Storage Account
+    - Azure Event Hub
+    - Azure Log Analytics
+  - Use Cases
+    - 3rdParty Product Ingestion
+    - Feeds into Business Intelligence
+    - Custom Data Collection
+    - Custom Search
 
 ## Diag-Event Hub-Integration
 5m 39s
@@ -136,6 +152,27 @@
 # Defining Logical Groupings (Tags) for Resources to Be Monitored
 25m 36s
 
+- Groupings from a Monitoring Perspective
+  - Resource Groups (Azure Tool)
+    - Logical Container for Multiple Resources
+    - Resources Exist in One and Only One Resource Group
+    - Resource Groups can span Regions
+    - Resource Groups can Span Services or Resource Types
+  - Computer Groups (Log Analytics Tool)
+    - Logical Grouping of Machines
+    - Log Analytics Only
+    - Processed as a Function
+  - Action Groups (Alerting Tool)
+    - Set of Actions to be performed when an Alert Criteria is is triggered
+    - Multiple Actions Supported
+    - No Logic Available when Triggered
+    - Action Types:
+      - Email/SMS/Push/Voice
+      - Azure Functions
+      - Automation Runbook
+      - Logic App
+      - Webhook
+      - ITSM
 
 ## Resource Groups
 9m 2s

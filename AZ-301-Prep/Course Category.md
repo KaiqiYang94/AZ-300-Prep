@@ -3,8 +3,8 @@
 | -------------  |-------------  | ----- |
 |Gathering Information About Existing Enterprise Architecture in Microsoft Azure | 1h 22m | ✔ |
 | Gathering Non-functional Requirements for Microsoft Azure| 1h 2m | ✔ |
-| Determining Feasibility and Refining Requirements for Microsoft Azure| 1h 1m | |
-| Designing a Monitoring Strategy for a Solution in Microsoft Azure| 3h 19m | |
+| Determining Feasibility and Refining Requirements for Microsoft Azure| 1h 1m | ✔ |
+| Designing a Monitoring Strategy for a Solution in Microsoft Azure| 3h 19m | ✔ |
 | Optimizing Consumption Strategy in Microsoft Azure| 2h 53m | |
 | Design Auditing for Microsoft Azure| 2h 34m | |
 | Design Identity Management in Microsoft Azure| 2h 45m | |
