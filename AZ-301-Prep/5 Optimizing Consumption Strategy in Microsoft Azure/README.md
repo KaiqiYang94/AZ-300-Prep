@@ -13,9 +13,65 @@
 
 ## Principles of Consumption Optimization
 9m 1s
+- Consumption Optimization: Guiding Principles
+    - "**Cost optimization**" does not equate to "**cost minimization**"
+    - Success is measured against business requirements
+    - Requirements are both technical & non-technical
+    - Architecture, monitoring & visibility
+    - In-depth Azure solution knowledge is needed
+    - Regular reassessment as services evolve
+- Consumption Optimization: Tools
+    - to forcast and understand the cost
+        - Azure Portal
+        - Azure Cost Management
+        - Azure Billing APIs ?
+        - Azure Pricing Calculator
+    - to monitor
+        - Azure Monitor
+        - Application Insights
+        - Log Analytics
+        - Power BI
 
 ## Introducing Woodgrove Bank
 5m 8s
+- Woodgrove Bank
+    - Multi-national organization
+    - Cloud-first mentality
+    - Many customer-facing products
+    - Data-driven approach
+    - Many stakeholders
+- Stakeholder: Application Development
+    - Responsible for customer-facing applications
+    - Requires insights, alerting and reporting
+    - Not responsible for underlying Azure services
+    - Requires rapid, on-demand platform scaling
+- Stakeholder: Infrastructure and Operations
+    - Overall responsibility for Azure platform
+    - Requires all solutions to be actively monitored
+    - Requires proactive alerting and insights
+    - Responsible for providing data reports
+- Stakeholder: Data and Business Intelligence
+    - Overall responsibility for business data
+    - Responsible for data regulatory compliance
+    - Uses structured and non-structured data
+    - Provides data visibility to business stakeholders
+- Stakeholder: Finance
+    - Responsible for internal finance including invoicing
+    - Requires full reporting on all aspects of Azure costs
+    - Provides executive reporting to business
+    - Requires full visibility over data platforms
+- Demo
+    - Native billing in the Azure Portal
+        - ![](2020-01-22-21-53-22.png)
+    - What you get out of the box
+    - Navigating options
+    - Azure Cost Management
+        - ![](2020-01-22-21-55-44.png)
+    - Why you should be using it
+    - Exploring in-depth consumption data
+    - Azure Billing APIs
+    - Extracting your own data programmatically
+    - PowerShell samples
 
 ## Azure Billing, Cost Management, and APIs
 8m 20s
@@ -26,28 +82,128 @@
 
 ## Understanding Business Data
 3m 31s
+- The ubiquity of cloud storage
+    - Virtual Machines
+        - Disks, OS logs & diagnostics logs
+    - Big Data
+        - Massive scale for analytics, ML and AI
+    - PaaS Solutions
+        - Code, databases & session state
+    - Everything else!
+        - Files, NoSQL, archives and more
 
 ## Business Data: Types and Use Cases
 4m 18s
+- Structured vs. Unstructured Data
+    - ![](2020-01-22-22-10-56.png)
+- Relational vs. Non-relational Data Storage
+    - ![](2020-01-22-22-12-19.png)
 
 ## Understanding Azure Storage Services
 6m 2s
 
+- Types of Azure Storage
+    - General Purpose
+        - Blobs, Files, Tables & Queues
+    - Blob
+        - Blobs & Access Tiers
+    - Disk
+        - Managed & Unmanaged VM Disks
+    - Data Lake Storage
+        - Big Data Analytics
+- Storage Account Replication & Redundancy
+    - Locally Redundant (LRS)
+    - Zone Redundant (ZRS)
+    - Geo Redundant (GRS)
+    - Read Access Geo Redundant (RA-GRS)
+- Azure Blob Storage Access Tiers(**For GPv2 and Blob type**)
+    - Hot
+        - Highest storage costs
+        - Lowest access costs
+        - Optimized for **regular access**
+    - Cool
+        - Lower storage costs
+        - Higher access costs
+        - Optimized for **less frequent access**
+            - no access for 30 days
+    - Archive
+        - Lowest storage costs
+        - Highest access costs
+        - Optimized for **long-term storage**
+            - no access for 180 days
 ## Big Data and Azure Data Lake
 3m 42s
+- Big Data Storage Requirements
+    - Massively scalable
+    - Performant for unstructured data
+    - Optimized for analytics
+    - Cost-effective
+- Azure Blob Storage vs. **Azure Data Lake Store**
+    - Azure Blob Storage
+        - General purpose data store
+        - Container-based object store
+        - Limits on scale
+        - Available in every Azure region
+        - Local and global redundancy
+    - **Azure Data Lake Store**
+        - Optimized for big data analytics
+        - Folder-based hierarchical file system
+        - **Unlimited scale**
+        - **Not available in every Azure region**
+        - **Local redundancy**
 
 ## Woodgrove Bank Storage: Business Requirements
 3m 41s
-
+- Problem Statement: Data & Storage
+    - Woodgrove Bank has deployed a number of Azure Storage Accounts for general purpose storage (GPv1). Over time, business requirements have evolved:
+        1. Same storage type has been used for all scenarios
+        2. Ongoing storage costs are too high
+        3. Business analysts need access to data for analytics
+        4. New regulatory frameworks around data retention
+- Business Requirements: Infrastructure and Operations
+    - Data must be able to be archived
+    - Storage costs must be able to be viewed
+    - Correct storage services to be used
+- Business Requirements : Data and Business Intelligence
+    - To perform analytics against massive data stores
+    - Requires potential for unlimited data growth
+    - Separate data storage from analytics processing
+- Business Requirements: Finance
+    - Access to overall storage costs
+    - Ensure that data retention regulations are met
+    - Access financial data even if an Azure region is down
+- **Solution Overview: Data & Storage**
+    - Migrate Storage Accounts to GPv2
+    - Implement tiering for data retention
+    - Implement RA-GRS for Finance data
+    - Implement Data Lake Storage
+    - Cost Management Dashboards
+    - Cost Management Reports
 ## Implementing Blob Tiering and Geo-redundancy
 3m 54s
-
+- Solution
+    - Migrate storage accounts from GPv1 to GPv2
+        - ![](2020-01-23-22-10-44.png)
+    - Implement blob tiering 
+        - ![](2020-01-23-22-13-19.png)
+    - Migrate Finance data to RA-GRS account
+        - ![](2020-01-23-22-14-57.png)
+        - two endpoints means that it's replicated
+    - Verify Finance data
 ## Migrating Data to Azure Data Lake Store
 2m 27s
+- Solution
+    - Implement Azure Data Lake Storage
+    - Migrate data to Data Lake Storage
+        - AdlCopy
+    - Verify access to Data Lake Storage
 
 ## Creating a Custom Azure Cost Management Dashboard for Storage
 2m 54s
-
+- Solution
+    - View storage costs in Azure Cost Management
+    - Create Cost Management dashboard for storage
+    - Create Cost Management report for storage
 
 # Optimizing Compute Costs
 33m 57s
