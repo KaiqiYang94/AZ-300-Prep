@@ -210,35 +210,182 @@
 
 ## Infrastructure-as-a-Service: Use Cases and Scenarios
 2m 41s
+- IaaS Scenarios
+    - Long-lived virtual machine instances
+    - Scalable, immutable infrastructure
+    - High performance computing
+    - Sandboxed development environments
 
 ## Choosing the Right Azure Compute Services
 7m 46s
+- Azure Compute Services
+    - Azure Virtual Machines
+        - Discrete compute instances with dedicated operating systems, including Scale Sets
+    - Azure App Services
+        - Managed compute instances designed to run applications from source code
+    - Azure Service Fabric
+        - Managed compute platform designed to run high-density microservice applications
+    - Azure Kubernetes Services & Azure Container Instances
+        - Managed services to run container-driven applications at on demand and at scale
+    - Azure Functions
+        - Serverless compute instances designed to run on-demand code at scale
+    - Azure Batch
+        - High-performance, on-demand computing clusters for intensive parallel processing
+- Choosing the Right Service
+    - Workload type
+    - Stateful/Stateless
+    - Control
+    - Scalability
+    - Usage Model
+    - CI/CD Support
 
 ## Optimizing Azure Compute
 4m 31s
+- Optimizing Azure Compute
+    - Right-sizing
+        - not copying the size of the on-premises VM
+        - size it so that it work well
+    - Performance monitoring
+        - make data driven decision using he metrics
+    - Auto-scaling
+    - Application analysis
+    - Move up the stack
+        - move it to server-less so that it can be charged by sec
+    - Turn it off!
+        - when not used
+        - use Azure automation
 
 ## Optimizing with Azure Monitor and Log Analytics
 3m 24s
+- Using **Azure Monitor** for Optimization
+    - Host & Guest VM metrics
+        - Historical performance and resource utilization enable informed decision-making
+    - Alerts and automation
+        - Real-time performance monitoring enables automated actions and remediation
+    - Data routing
+        - Send data to upstream sources for collation, analysis and visualization
+- Using **Azure Log Analytics** for Optimization
+    - Combination & correlation
+        - Combine data from multiple sources to build a rich view of the whole environment
+    - Applied analytics
+        - Data analytics performed through machine learning to enable diagnosis and remediation
+    - Data visualization
+        - Visual data representation enables trend analysis and information dissemination
+- Visualizing with **Power BI**
+    - Combination & correlation
+        - Query multiple sources and aggregate the data to show holistic correlation
+    - Shareable dashboards
+        - Distributable dashboards enable data sharing and collaboration throughout the company
+    - Enhanced decision-making
+        - Visual data representation enables rapid trend analysis and informed decision-making
 
 ## Right-sizing Virtual Machines with Azure Monitor
 8m 6s
-
+- Woodgrove Bank Scenario: Compute
+- Problem Statement: Compute Woodgrove Bank migrated a number of
+    - workloads in to Azure using Virtual Machines which were sized like-for-like. New workloads such as BI analytics and application hosting were performed using new Azure Virtual Machines. As a result:
+        - It is felt that operating costs are too high
+        - There is a push to use workload-appropriate services
+        - Developers require dedicated compute environments
+        - Finance needs visual oversight to verify ROI
+- Business **Requirements**: Application Development
+    - Requires dedicated compute instances for testing
+    - Does not have time to provision all supporting services
+    - Does not want to have to constantly manage budget
+- Business **Requirements**: Infrastructure and Operations
+    - Needs to verify that services are right-sized
+    - Does not want to scale services manually
+    - Does not want developers to need platform access
+    - Needs to aggregate data for visualization
+- Business **Requirements**: Data and Business Intelligence
+Needs on
+    - demand compute for analytics processing
+- ### Solution Overview: Compute
+    - Use Azure Monitor metrics for right-sizing
+    - Aggregate metrics in Log Analytics
+    - Implement VMSS and auto-scaling
+    - Implement Azure DevTest Labs
+        - for testing
+    - Implement Azure Batch for analytics
+    - Publish Power BI dashboards
+- Solution(Demo)
+    - Configure Azure Monitor and VM Diagnostics
+    - Analyze Azure Monitor performance metrics
+    - Right-size Azure VM from Azure Monitor metrics
+    - Route Azure Monitor metrics to Log Analytics
+    - Create dashboard in Log Analytics
 ## Implementing Performance-driven Autoscaling
 3m 2s
-
+- Solution
+    - Implement VM Scale Sets
+    - Use Azure Monitor to configure VMSS auto-scaling
+    - Implement Azure Batch
+    - Run an Azure Batch analytics task
 ## Implementing Azure DevTest Labs
 4m 24s
-
+- Solution
+    - Implement Azure DevTest Labs
+    - Configure Azure DevTest Labs
+    - Verify developers can provision resources
 
 # Optimizing Network Costs
 26m 32s
 
 ## Core Microsoft Azure Networking Services
 4m 15s
-
+- Core Azure Network Services
+    - Virtual Network
+    - Load Balancer
+    - ExpressRoute
+    - Traffic Manager
+    - Core Azure Network Services
+    - Content Delivery Network
+    - Application Gateway
+    - Firewall
 ## Understanding Azure Networking Cost Drivers
 5m 48s
-
+- Azure Networking Cost Drivers
+    - Bandwidth
+        - **Outbound** data transfer varies by zone
+    - Virtual Network Peering
+        - Inbound & outbound are charged
+    - VPN Gateway
+        - Pricing depends on service SKU
+    - ExpressRoute
+        - Pricing depends on region and plan
+- Azure Networking Cost Drivers
+    - ![](2020-01-24-17-04-18.png)
+        1. Within the same VNet= Free
+        2. Service to service in the same region = Free
+        3. **Cross-region service to service = Charged**
+            - outbound traffic is charged
+            - inbound traffic is not
+        4. **Outbound to internet from Azure = Charged**
+        5. Inbound to Azure from internet = Free
+        6. VNetto VNetVPN in the same region = Free
+        7. **VNetto VNetVPN across regions = Charged**
+        8. **ExpressRoute outbound = Charged***
+            - outbound fee is based on the plan
+        9.  ExpressRoute inbound = Free
+        10. **Inter-region VNetPeering = Charged**
+            - charged in both directions
+        11. **Global VNetPeering = Charged**
+            - charged in both directions
+- Azure Networking Global Zones
+    - Zone 1
+        - US, Canada, Europe, UK & France
+    - Zone 2
+        - Asia, Australia, India, Japan, Korea, South Africa
+    - Zone 3
+        - Brazil
+    - DE Trustee
+        - Germany
+    - US Gov
+        - US Gov, US DoD
+    - For example:
+        - for a vNet peering between Zone1 and Zone2
+        - outbound traffic is charged at Zone1 rate
+        - inbound traffic is charged at Zone2 rate
 ## Considerations for Optimizing Connectivity
 7m 15s
 
