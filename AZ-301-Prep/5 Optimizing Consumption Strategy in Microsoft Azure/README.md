@@ -388,9 +388,62 @@ Needs on
         - inbound traffic is charged at Zone2 rate
 ## Considerations for Optimizing Connectivity
 7m 15s
+- Azure **WAN** Connectivity
+    - VPN
+        - VNet-to-VNetVPN creates a secure connection over the internet between VNets
+    - VNetPeering
+        - Creates a low-latency connection between VNetsvia the Azure backbone
+    - Hub-Spoke Topology
+        - Use VNetPeering to provide centralised access to shared services
+- Azure **Hybrid** Connectivity
+    - Site-to-Site VPN
+        - Creates a secure connection over public internet from on-premises network to Azure
+    - ExpressRoute
+        - Creates a private connection from on-premises network or colocation facility to Azure
+    - Gateway Transit
+        - Azure VNetpeers in the same region can traverse a single gateway to local network
+- Azure Hybrid Connectivity Considerations
+    - Service placement becomes a critical architectural consideration
+    - Egress traffic can become a significant cost factor (Azure to on-premises)
+    - Application and service architecture and configuration must be reviewed
+    - The on-premises network becomes an architectural dependency
+- Optimizing with Azure Network Watcher
+    - Gateway Diagnostics
+        - Ensure that the resources you have deployed are working correctly; remediate if not
+    - Routing Diagnostics
+        - Identify potential mis-configurations resulting in naccessible services
+    - Regional Latency
+        - Determine whether to deploy resources in a dedicated region to service customers
+- Optimizing with Azure Log Analytics
+    - Performance Monitor
+        - Monitor packet loss, latency, network paths and overall health (no SNMP)
+    - Service Connectivity Monitor
+        - Monitor and diagnose network health between your network and service endpoints
+    - Traffic Analytics
+        - Global monitoring of user and application activity, including capacity utilization trends
 
 ## Woodgrove Bank Networking: Business Requirements
 2m 0s
+- Problem Statement: Networking
+    - ![](2020-01-27-21-27-30.png)
+- Business Requirements: Infrastructure and Operations
+    - ![](2020-01-27-21-27-49.png)
+- Business Requirements: Application Development
+    - ![](2020-01-27-21-28-01.png)
+- Business Requirements: Finance
+    - ![](2020-01-27-21-28-26.png)
+- Solution Overview: Networking
+    - Implement Azure Network Watcher
+    - Implement Network Performance Monitor
+    - Create custom Cost Management report
+    - Network architecture review
+    - Service architecture review
+    - Implement Content Delivery Network
+- Solution
+    - Review Woodgrove Bank’s WAN architecture
+    - Implement Azure Network Watcher
+    - Verify Network Watcher data
+    - Retrieve Azure Virtual Network topology
 
 ## Implementing Azure Network Watcher and Traffic Analytics
 4m 32s
@@ -405,12 +458,46 @@ Needs on
 
 ## Microsoft Azure App Services Overview
 5m 5s
+- Azure App Services Overview
+    - ![](2020-01-27-21-39-54.png)
+- Azure App Service SKUs
+    - Shared
+        - Free & Shared
+    - Dedicated
+        - Basic, Standard, Premium & PremiumV2
+    - Isolated
+        - Dedicated VMs in an isolated VNet
+    - Consumption
+        - Serverless: pay for what you run
 
 ## Understanding and Optimizing App Service Scaling
 6m 30s
+- Azure App Service Scale Units
+    - Scale Units or “Stamps”
+        - Discrete clusters of servers in each Azure region designed to run web applications
+    - Web Workers
+        - Most servers in a scale unit are Workers, with some support services
+    - Application Density
+        - All Workers in the scale unit run all applications (unless per-app scaling is used)
+- App Service Deployment Flow
+    - ![](2020-01-27-22-04-57.png)
+- Optimizing with **Per-App Scaling**
+    - Specify how many Workers an app can run on
+    - Recommended for high density, low volume scenarios
+    - Allows high performance apps to scale efficiently
+    - Only available in **Standard**, **Premium**, **PremiumV2** and **Isolated** SKUs
+- Autoscaling
+    - Azure Monitor Metrics
+        - Trigger scaling based on performance metrics (e.g. CPU > 80%) or custom metrics
+    - Scheduled Scaling
+        - Scale based on the time and day (e.g. scale down from 20:00-4:00 every day)
+    - Integrated Alerting
+        - Generate alerts based on autoscaleevents (e.g. why did that app suddenly scale out?)
 
 ## Application Architecture Considerations and Going Serverless on Azure
 6m 33s
+- Application Architecture Considerations
+    - ![](2020-01-27-22-09-30.png)
 
 ## Monitoring App Services and Woodgrove Bank App Services: Business Requirements
 4m 35s
