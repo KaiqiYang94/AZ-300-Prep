@@ -498,10 +498,48 @@ Needs on
 6m 33s
 - Application Architecture Considerations
     - ![](2020-01-27-22-09-30.png)
+- Serverless options:
+    - Azure Functions
+        - Execute discrete blocks of code without building an entire application
+    - Two Runtime Versions
+        - v1 is Production (GA) and runs on Windows
+        - v2 runs on .NET Core and is in Preview
+    - **App Service** or **Consumption Model**
+        - Use dedicated App Service Plan or pay per execution
+- Azure Functions Cost Drivers (Consumption Plan)
+    - Free stuff before you are charged
+        - Execution Time ?
+            - (400,000 GB-s/month)
+            - 1 GB-s: using 1 GB memory running for 1 second 
+        - Number of Executions
+            - (1,000,000 per month)
+    - App Plan Storage
+        - Stateful data & logging
+
+- Optimizing with Quota Monitoring
+    - Quota Monitoring
+    - Performance Metrics Monitoring
+    - Custom Metrics
+
+- Optimizing with **Azure Application Insights**
+    - **Realtime Data Streams**
+        - Applications stream performance telemetry directly to App Insights Workspace
+    - **Integrate with Azure Functions**
+        - Monitor serverless telemetry and disable built-in logging to Azure Storage
+    - **Application Map**
+        - Troubleshoot bottlenecks using a full map of all dependent applications and services
 
 ## Monitoring App Services and Woodgrove Bank App Services: Business Requirements
 4m 35s
-
+- Solution Overview: App Services
+    - Implement autoscaling on App Service metrics
+    - Implement Azure Application Insights
+    - Validate Application Insights data
+        - performance test
+            - ![](2020-01-28-22-55-27.png)
+    - Review application architecture
+    - Implement App Insights for Functions
+    - Create custom Cost Management report
 ## Configure App Service Autoscaling with Azure Monitor
 3m 31s
 
@@ -514,12 +552,66 @@ Needs on
 
 ## Azure Identity Overview and Licensing
 5m 14s
+- Azure Identity Services Overview
+    - Azure Active Directory
+    - Azure AD Domain Services
+    - Identity Security
+    - Azure AD B2B
+    - Azure AD B2C
+    - Azure AD Apps & App Proxy
+- **Azure Active Directory Licensing**
+    - Free
+        - Included with Azure & Office 365
+        - 5000 objects
+    - Basic
+        - Includes SSPR, branding & SLA
+    - Premium 1
+        - Includes MFA, MIM & Conditional Access
+    - Premium 2
+        - Includes Identity Protection & PIM
+- Azure AD **Privileged Identity Management** Eligible
+    - Eligible Admins
+        - On-demand, **just-in-time admin access** to Azure resources. Privilege is not permanent.
+    - Role Activation
+        - Set the **duration of activation**, require a service ticket, approval and MFA
+    - License Required
+        - Conditional Access needs an Azure AD **Premium P2** or EMS E5 license assigned
 
 ## Optimizing Azure Identity Security
 4m 33s
 
 ## Connecting with External Users and Identity Federation
 6m 50s
-
+- Connecting with External Users
+    - Azure Active Directory B2B
+        - Collaborate with partners using their own credentials (no Azure AD)
+        - No external directories, account sync or password management
+        - Azure AD Free features available to guest users at no charge
+        - Paid Azure AD features available to guest users in a 5:1 license ratio
+    - Azure Active Directory B2C
+        - External users can authenticate with social accounts (e.g. LinkedIn)
+        - Requires an Azure AD B2C tenant which is separate from Azure AD
+        - Custom policies extend to any IdPsupporting OpenID Connect or SAML
+        - Number of users stored in the tenant & number of authentications
+        - First 50,000 users/authentications per month are free
+        - MFA can be enabled & is charged at a flat rate per authentication
+- Using Azure AD Connect
+    - Synchronize on-premises ADDS objects to Azure AD
+    - Separate password in Azure AD unless password hash synced
+    - Pass-through authentication verifies password on-premises
+    - Does not support on-premises MFA solutions
+    - No licensing costs for Azure AD Connect
+- ADFS for Federated Identities
+    - Identities are fully federated and controlled from on-premises
+    - Supports widest range of security options (e.g. smartcard)
+    - Integration with Office portal and Windows 10 desktop
+    - Creates a dependency on complex, on-premises infrastructure
 ## Woodgrove Bank: Implementing and Enabling Multi-factor Authentication
 8m 5s
+- Solution Overview: Identity Services
+    - Perform Azure AD license audit
+    - Implement Azure MFA for employees
+    - Implement Azure AD Group Licensing
+    - Perform license audit for B2B collaboration
+    - Implement Azure B2C for Web App
+    - Generate Azure AD licensing report
