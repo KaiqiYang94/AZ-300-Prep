@@ -173,13 +173,20 @@ As referred to in figure 2.
 ## Introduction
 
 ## Designing for High Availability with Azure Load Balancers
+- Azure load balancer
+  - ![](High%20Availability%20with%20Azure%20Load%20Balancers.png)
+- Application Gateway
+  - ![](Application%20gateway.png)
+- Traffic manager
+  - ![](Traffic%20manager.png)
 
 ## Designing a Virtual Network from Scratch
 
 ## Placing Servers in Separate Availability Zones
 
 ## Load Balancing Across Availability Zones
-
+- Single Region High Availability
+  - ![](Single%20Region%20High%20Availability.png)
 ## Architecting Multi-region Solutions
 
 ## Common Design Patterns for High Availability

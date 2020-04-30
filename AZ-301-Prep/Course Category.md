@@ -17,7 +17,7 @@
 | Design and Document Data Flows with Microsoft Azure| 1h 15m | |
 | Designing a Monitoring Strategy for the Microsoft Azure Data Platform | 39m | |
 | Designing a Site Recovery Strategy on Microsoft Azure| 1h 57m | |
-| Designing for High Availability on Microsoft Azure| 2h 15m | |
+| Designing for High Availability on Microsoft Azure| 2h 15m | ✔ |
 | Designing a Data Archiving Strategy on Microsoft Azure | 56m | |
 | Designing Deployments in Microsoft Azure| 1h 24m | |
 | Designing Migrations for Microsoft Azure| 1h 27m | |
