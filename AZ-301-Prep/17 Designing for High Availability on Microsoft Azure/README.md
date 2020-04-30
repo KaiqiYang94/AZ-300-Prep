@@ -75,23 +75,41 @@ As referred to in figure 2.
 
 ## Module Summary
 
-# Designing for Azure Autoscale
 
+# Designing for Azure Autoscale
 
 ## Introduction
 
 ## Understanding Vertical and Horizontal Scaling
+- Vertical scaling
+- Horizontal scaling 
 
 ## Designing Autoscaling Rules
-
+- Designing Autoscaling Rules
+  - ![](Designing%20Autoscaling%20Rules.png)
+  - ![](Designing%20Autoscaling%20rule%202.png)
 ## Creating a Virtual Machine Scale Set
-
+- Create VM scale set
+  - VM size
+  - VM counts
+  - Auto scaling rules
+    - ![](Create%20VM%20scale%20set.png)
+  - load balancer
+    - ![](load%20balancer.png)
 ## Enabling Autoscale with Virtual Machine Scale Sets
-
+- Scale rules
+  - ![](scale%20rules.png)
+  - ![](Done%20configuring%20scale%20rule.png)
 ## Autoscaling in Azure App Service
-
+- Auto scaling only enabled in the Production tiers
+  - Production app service plan![](Production%20app%20service%20plan.png)
+  - ![](Dev%20app%20service%20plan.png)
 ## Scalability with Azure Functions
-
+- App service plan
+  - pay monthly
+- COnsumption plan
+  - pay when it compute
+  - don't need to think about the auto-scaling
 ## Module Summary
 
 # Designing for Storage High Availability
@@ -100,20 +118,53 @@ As referred to in figure 2.
 
 ## Understanding Azure Storage Replication
 
+- Replication
+  - LRS
+    - 99.999999999% 11 9's
+    - three copy with in same data center
+  - ZRS
+    - 12 9's 
+    - three storage cluster in singe region
+  - GRS
+    - 16 9's
+    - in a secondary region
+    - fail over controlled by Azure, otherwise not available
+  - RA-GRS
+    - Read access geo-redundant storage
+    - fail over controlled by you
+    - eventual consistency
+      - lowest level
+
 ## Accessing Data During Regional Outages
-
+- status of the storage account
+  - ![](storage%20account%20RA%20GRS.png)
+- accessible 
+  - ![](accessible%20RA%20GRS.png)
 ## Working with Virtual Machine Managed Disks
-
+- ![](managed%20disks.png)
+- Availability zone require managed disks
+  - ![](Availability%20zone%20require%20managed%20disks.png)
 ## Taking Snapshots of Virtual Machine Disks
 
 ## Running Virtual Machine Backups
 
 ## Storage High Availability for SQL Databases
 
+- ![](HA%20for%20sql%20db.png)
+
 ## Working with Azure SQL Database Geo-replication
 
+- set up secondary region for sql server
+  - ![](set%20up%20secondary%20region%20for%20sql%20server.png)
+- Create secondary db
+  - ![](Create%20secondary%20db.png)
+- result
+  - ![](result%20after%20secondary.png)
+- Fail over group for a sql server
+  - ![](failover%20group.png)
 ## Building Globally Distributed Applications with Azure Cosmos DB
-
+- Adding read regions for cosmos DB
+  - ![](Adding%20read%20regions%20for%20cosmos%20db.png)
 ## Module Summary
 
 # Designing for Network Redundancy
