@@ -1,7 +1,7 @@
 
 | Courses        | Time           |  |
 | -------------  |-------------  | ----- |
-|Gathering Information About Existing Enterprise Architecture in Microsoft Azure | 1h 22m | ✔ |
+| Gathering Information About Existing Enterprise Architecture in Microsoft Azure | 1h 22m | ✔ |
 | Gathering Non-functional Requirements for Microsoft Azure| 1h 2m | ✔ |
 | Determining Feasibility and Refining Requirements for Microsoft Azure| 1h 1m | ✔ |
 | Designing a Monitoring Strategy for a Solution in Microsoft Azure| 3h 19m | ✔ |
