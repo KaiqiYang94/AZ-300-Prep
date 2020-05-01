@@ -150,10 +150,83 @@
         - Post-deployment scripting typically leverages a basic base image, then relies on scripting or a configuration management platform to do configuration after the VM is deployed.
         - Pro: don't need to do the security patches
         - Cons: slower build time, need to execute scripts
+  - Automation of operational tasks
+    - Automating these tasks with Azure Automation reduces manual workloads
+      - Periodically searching for orphaned disks.
+      - Installing the latest security patches on VMs.
+      - Searching for and shutting down virtual machines in off-hours.
+      - Running daily reports and producing a dashboard to report to senior management.
+  - Automating development environments
 - [Summary](https://docs.microsoft.com/en-au/learn/modules/design-for-efficiency-and-operations-in-azure/5-summary/)
 # [Design for availability and recoverability in Azure](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/)
 - [Introduction](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/1-introduction/)
 - [Build a highly available architecture](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/2-high-availability/)
+  - Evaluate high availability for your architecture
+    - There are three steps to evaluate an application for high availability:
+      - Determine the service-level agreement of your application
+      - Evaluate the HA capabilities of the application
+      - Evaluate the HA capabilities of dependent applications
+  - Determine the service-level agreement of your application
+    - A service-level agreement (SLA) is an agreement between a service provider and a service consumer in which the service provider commits to a standard of service based on measurable metrics and defined responsibilities.
+    - Here are some other considerations when defining an SLA:
+      - To achieve four 9's (99.99%), you probably can't rely on manual intervention to recover from failures. The application must be self-diagnosing and self-healing.
+      - Beyond four 9's, it is challenging to detect outages quickly enough to meet the SLA.
+      - Think about the time window that your SLA is measured against. The smaller the window, the tighter the tolerances. It probably doesn't make sense to define your SLA in terms of hourly or daily uptime.
+  - Evaluate the HA capabilities of the application
+    - Focus on **single points of failure** and **critical components** that would have a large impact on the application if they were unreachable, misconfigured, or started behaving unexpectedly.
+  - Evaluate the HA capabilities of dependent applications
+    - You'll need to understand not only your application's SLA requirements to your consumer, but also the provided SLAs of any resource that your application may depend on.
+  - Azure's highly available platform
+    - There are several core concepts when considering HA for your architecture on Azure:
+      - **Availability sets**
+        - Availability sets are a way for you to inform Azure that VMs that belong to the same application workload should be **distributed** to prevent **simultaneous impact** from hardware failure and scheduled maintenance. Availability sets are made up of **update domains** and **fault domains**.
+      - **Availability zones**
+        - Availability zones are independent physical datacenter locations within a region that include their own power, cooling, and networking.
+        - Services like virtual machines are **zonal** services and allow you to deploy them to specific zones within a region. 
+        - Other services are **zone-redundant** services and will replicate across the availability zones in the specific Azure region.
+        - **Availability zones are mutually exclusive with availability sets**.
+          - You'll have diversity at the data center level, and updates will never be performed to multiple availability zones at the same time.
+      - **Load balancing**
+        - Load balancers manage how network traffic is distributed across an application.
+        - **Azure Traffic Manager**
+          - provides global DNS load balancing. 
+          - You would consider using Traffic Manager to provide load balancing of DNS endpoints within or across Azure regions.
+        - **Azure Application Gateway**
+          - provides Layer 7 load-balancing capabilities
+        - **Azure Load Balancer**
+          - is a layer 4 load balancer.
+        - ![](Sample%20structure.png)
+      - **Platform as a service (PaaS) HA capabilities**
+        - PaaS services come with high availability built in.
 - [Develop a disaster recovery strategy](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/3-disaster-recovery/)
+  - A disaster recovery plan is a single document that details the procedures that are required to recover from data loss and downtime caused by a disaster, and identifies who's in charge of directing those procedures.
+  - How to create a disaster recovery plan
+    - **Risk assessment and process inventory**
+    - **Recovery objectives**
+      - **Recovery Point Objective (RPO)**: The maximum duration of acceptable data loss. RPO is measured in units of time, not volume: "30 minutes of data", "four hours of data", and so on. RPO is about limiting and recovering from data loss, not data theft.
+      - **Recovery Time Objective (RTO)**: The maximum duration of acceptable downtime, where "downtime" needs to be defined by your specification. For example, if the acceptable downtime duration is eight hours in the event of a disaster, then your RTO is eight hours.
+      - RPO and RTO
+        - ![](RPO%20and%20RTO.png)
+    - **Detailing recovery steps**
+      - The final plan should go into detail about exactly what steps should be taken to restore lost data and application connectivity.
+        - Backups
+        - Data replicas
+        - Deployments
+        - Infrastructure
+        - Dependencies
+        - Configuration and notification
+  - Designing for disaster recovery
+    - Data recovery and replication
+      - Replication duplicates stored data between multiple data store replicas. 
+      - Azure Storage
+      - Azure SQL Database
+      - Azure Cosmos DB
+    - Process recovery
+      - Azure Site Recovery
+        - Azure Site Recovery is a service that's dedicated to managing process recovery for workloads running on VMs deployed to Azure, VMs running on physical servers, and workloads running directly on physical servers
+        - Site Recovery replicates workloads to alternate locations and helps you to failover when an outage occurs and supports testing of a disaster recovery plan.
+      - Service-specific features
+        - Region pairs
+  - Testing a disaster recovery plan
 - [Protect your data with backup and restore](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/4-backup-and-restore/)
 - [Summary](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/5-summary/)
