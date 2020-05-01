@@ -29,7 +29,7 @@ console.log(str)
 ```
 
 
-Pluralsight
+Plural sight
 ``` js
 var jq = document.createElement('script');
 jq.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js";

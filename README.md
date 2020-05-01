@@ -1,5 +1,6 @@
 # Exam AZ-300: Microsoft Azure Architect Technologies [Skills Measured](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VzwB)
 
+[Exam address](https://docs.microsoft.com/en-us/learn/certifications/exams/az-301)
 
 # Deploy and configure infrastructure (25-30%)
 ## Analyze resource utilization and consumption
