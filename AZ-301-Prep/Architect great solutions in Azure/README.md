@@ -67,14 +67,89 @@
     - Caching
     - Polyglot persistence
       - Polyglot persistence is the usage of different data storage technologies to handle your storage requirements.
-    - 
 - [Identify performance bottlenecks in your application](https://docs.microsoft.com/en-au/learn/modules/design-for-performance-and-scalability-in-azure/5-identify-performance-bottlenecks-in-your-application/)
+  - Importance of requirements
+  - Performance monitoring options in Azure
+    - **Azure Monitor**
+      - Azure Monitor provides a single management point for infrastructure-level logs and monitoring for most of your Azure services.
+    - **Log Analytics**
+      - **For infrastructure monitoring**
+      - Log Analytics acts as a central hub for monitoring data. 
+      - Log Analytics receives monitoring data from your Azure resources and makes it available to consumers for analysis or visualization.
+  - Application performance management
+    - This is where integrating telemetry into an application by using an application performance management solution (APM) to track down **low-level application performance** and behavior can be beneficial. 
+      - **Application Insights**
+        - **For Application monitoring**
+        - Application Insights stores its data in a common repository, and metrics are shared with Azure Monitor.
 - [Summary](https://docs.microsoft.com/en-au/learn/modules/design-for-performance-and-scalability-in-azure/6-summary/)
 # [Design for efficiency and operations in Azure](https://docs.microsoft.com/en-au/learn/modules/design-for-efficiency-and-operations-in-azure/)
 - [Introduction](https://docs.microsoft.com/en-au/learn/modules/design-for-efficiency-and-operations-in-azure/1-introduction/)
 - [Maximize efficiency of cloud spend](https://docs.microsoft.com/en-au/learn/modules/design-for-efficiency-and-operations-in-azure/2-maximize-efficiency-of-cloud-spend/)
+  - Track your cloud spend
+    - **Azure Cost Management** gives you insights where your spend is going, as well as underutilized resources. 
+    - **Azure Advisor** also has a cost component. It recommends VM resizing, buying reserved instances when more cost effective than pay-as-you-go instances.
+  - Organize to optimize
+  - Optimizing IaaS costs
+    - Compute
+      - Right size virtual machines
+        - **Azure Advisor** identifies which virtual machines are underutilized.
+      - Implement shutdown schedules for virtual machines
+        - **Azure Automation** to run your VMs only during those times that your workloads require.
+      - Apply compute cost discounts
+        - **The Azure Hybrid Benefit** allows you to further optimize your costs for both Windows Server and SQL Server.
+      - Virtual machine disk storage cost optimization
+  - Optimizing PaaS costs
+    - Optimizing Azure SQL Database costs
+      - **SQL Database elastic pools** are a simple, cost-effective solution for managing and scaling several databases that have varying and unpredictable usage demands.
+    - Optimizing Blob storage costs
+      - Azure Storage offers three storage tiers for blob object storage.
+        - **Hot access tier** - Highest storage costs but the lowest access costs.
+        - **Cool access tier** - Lower storage costs and higher access costs compared to hot storage. This tier is intended for data that will stay in the cool tier for at least 30 days.
+        - **Archive access tier** - Lowest storage cost and highest data retrieval costs compared to hot and cool storage. This tier is intended for data that can tolerate several hours of retrieval latency and will stay in the archive tier for at least 180 days.
+    - Leverage consumption pricing models
+      - Azure Functions have the ability to use Consumption plans.
+    - ![](Check%20your%20knowledge.png)
 - [Use monitoring and analytics to gain operational insights](https://docs.microsoft.com/en-au/learn/modules/design-for-efficiency-and-operations-in-azure/3-use-monitoring-and-analytics-to-gain-operational-insights/)
+  - Monitoring
+    - ![](Monitoring.png)
+  - Core monitoring
+    - Activity logging
+    - Health of cloud services
+    - Metrics and diagnostics
+    - Recommendations on best practices
+  - Deep infrastructure monitoring
+  - Deep application monitoring
 - [Use automation to reduce effort and error](https://docs.microsoft.com/en-au/learn/modules/design-for-efficiency-and-operations-in-azure/4-use-automation-to-reduce-effort-and-error/)
+  - Infrastructure as code
+      - Infrastructure as code is the management of infrastructure (networks, virtual machines, load balancers, and connection topology) in a descriptive model, using a versioning system similar to what is used for source code. 
+      - Infrastructure as code evolved to solve the problem of environment drift.
+          - a unique configuration that cannot be reproduced automatically.
+      - When automating the deployment of services and infrastructure, there are two different approaches you can take: 
+      - **imperative** 
+        - With imperative automation, we're specifying how things are to be done.
+        - Azure CLI or Azure PowerShell
+        ```
+        az group create --name storage-resource-group \
+        --location eastus
+
+        az storage account create --name mystorageaccount \
+        --resource-group storage-resource-group \
+        --kind BlobStorage \
+        --access-tier hot
+        ```
+      - **declarative**
+        - With declarative automation, we're specifying what we want our result to be, leaving the details of how it's done to the system we're using.
+        - Resource Manager templates
+  - VM customization: images vs. post-deployment configuration
+    - There are two common strategies applied for the configuration work considered to be part the configuration of the VM itself, both of which have advantages and disadvantages:
+      - **Custom images**
+        - Custom images are generated by deploying a virtual machine and then configuring or installing software on that running instance.
+        - Pro: quick build time
+        - Cons: need to do the security patches
+      - **Post-deployment scripting**
+        - Post-deployment scripting typically leverages a basic base image, then relies on scripting or a configuration management platform to do configuration after the VM is deployed.
+        - Pro: don't need to do the security patches
+        - Cons: slower build time, need to execute scripts
 - [Summary](https://docs.microsoft.com/en-au/learn/modules/design-for-efficiency-and-operations-in-azure/5-summary/)
 # [Design for availability and recoverability in Azure](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/)
 - [Introduction](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/1-introduction/)
