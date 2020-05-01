@@ -15,11 +15,59 @@
 - [Network security](https://docs.microsoft.com/en-au/learn/modules/design-for-security-in-azure/6-network-security/)
 - [Application security](https://docs.microsoft.com/en-au/learn/modules/design-for-security-in-azure/7-application-security/)
 - [Summary](https://docs.microsoft.com/en-au/learn/modules/design-for-security-in-azure/8-summary/)
+  
 # [Design for performance and scalability in Azure](https://docs.microsoft.com/en-au/learn/modules/design-for-performance-and-scalability-in-azure/)
 - [Introduction](https://docs.microsoft.com/en-au/learn/modules/design-for-performance-and-scalability-in-azure/1-introduction/)
 - [Leverage scaling up and scaling out in your architecture](https://docs.microsoft.com/en-au/learn/modules/design-for-performance-and-scalability-in-azure/2-scaling-up-and-scaling-out/)
+  - Scaling up/down
+    - By size
+      - for VMs
+    - By DTU
+      - for sql servers
+    - By plan
+      - for app services
+  - Throttling
+  - Severless
 - [Optimize network performance](https://docs.microsoft.com/en-au/learn/modules/design-for-performance-and-scalability-in-azure/3-optimize-network-performance/)
+  - Latency between **Azure resources**
+    - following a example in this page
+    - There are a few ways we could reduce the remaining latency:
+      - Create a **read-replica of the database** in Australia East. This would allow reads to perform well, but writes would still incur latency. Azure SQL Database geo-replication allows for read-replicas.
+      - Sync your data between regions with **Azure SQL Data Sync.**
+      - Use a **globally distributed database** such as Azure Cosmos DB. This would allow both reads and writes to occur regardless of location, but may require changes to the way your application stores and references data.
+      - Use caching technology such as **Azure Cache for Redis** to minimize high-latency calls to remote databases for frequently accessed data.
+  - Latency between **users and Azure resources**
+    - Use a DNS load balancer for endpoint path optimization
+      - **Azure Traffic Manager**
+    - Use CDN to cache content close to users
+      - **Azure CDN**
+    - Use ExpressRoute for connectivity from on-premises to Azure
+      - **Azure ExpressRoute**
+
 - [Optimize storage performance](https://docs.microsoft.com/en-au/learn/modules/design-for-performance-and-scalability-in-azure/4-optimize-storage-performance/)
+  - Optimize **virtual machine** storage performance
+    - When building an IaaS workload, which type of disk should you use? There are four options:
+    - **Local SSD storage**
+      - Each VM has a temporary disk
+      - High performance
+      - data could be lost during a maintenance event or a redeployment of the VM. 
+      - There is no charge for this storage. It's included in the cost of the VM.
+      - Workload: **temporary storage**
+    - **Standard storage HDD**
+      - This is spindle disk storage and may fit well where your application is not bound by inconsistent latency or lower levels of throughput. 
+      - Workload: **dev/test workload**
+    - **Standard storage SSD**
+      - This is SSD backed storage and has the low latency of SSD but lower levels of throughput. 
+      - Workload: **non-production web servers**
+    - **Premium storage SSD**
+      - This SSD backed storage is well-suited for those workloads that are going into production, require the greatest reliability and demand consistent low latency, or need high levels of throughput and IOPS. 
+      - Workload: **production workloads**.
+      - Premium storage can attach only to VM sizes with an "s" in the name, for example D2s_v3 or Standard_F2s_v2. Any virtual machine type (with or without an "s" in the name) can attach standard storage HDD or SSD drives.
+  - Optimize storage performance for your application
+    - Caching
+    - Polyglot persistence
+      - Polyglot persistence is the usage of different data storage technologies to handle your storage requirements.
+    - 
 - [Identify performance bottlenecks in your application](https://docs.microsoft.com/en-au/learn/modules/design-for-performance-and-scalability-in-azure/5-identify-performance-bottlenecks-in-your-application/)
 - [Summary](https://docs.microsoft.com/en-au/learn/modules/design-for-performance-and-scalability-in-azure/6-summary/)
 # [Design for efficiency and operations in Azure](https://docs.microsoft.com/en-au/learn/modules/design-for-efficiency-and-operations-in-azure/)
