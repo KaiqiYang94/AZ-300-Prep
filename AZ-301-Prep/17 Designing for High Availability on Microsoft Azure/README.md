@@ -187,7 +187,11 @@ As referred to in figure 2.
 ## Load Balancing Across Availability Zones
 - Single Region High Availability
   - ![](Single%20Region%20High%20Availability.png)
+- Setting up LB
+  - ![](Setting%20up%20LB.png)
 ## Architecting Multi-region Solutions
+- ![](Multi-region%20Solutions.png)
+  
 
 ## Common Design Patterns for High Availability
 
@@ -199,12 +203,13 @@ As referred to in figure 2.
 ## Introduction
 
 ## Azure App Service Resiliency
-
+- ![](Azure%20App%20Service%20Resiliency.png)
 ## Azure SQL Database Considerations
-
+- ![](Azure%20SQL%20Database%20Considerations.png)
 ## Application Gateway High Availability
 
 ## Azure Redis Cache Geo-replication
+- ![](Azure%20Redis%20Cache%20Geo-replication.png)
 
 ## Asynchronous Messaging and High Availability
 
