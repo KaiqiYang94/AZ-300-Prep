@@ -264,6 +264,6 @@
     - **Full backups are created weekly**, with **differential backups performed every 12 hours**, and **log backups created every five minutes**.
     - Backups created by the service can be used to restore a database to a **specific point in time**, even if it's been deleted.
   - **Azure App Service**
-    - Web applications hosted in the Azure App Service Standard and Premium tiers support turnkey scheduled and manual backups. 
+    - Web applications hosted in the Azure App Service **Standard** and **Premium** tiers support turnkey scheduled and manual backups. 
     - Backups include **configuration** and **file contents** as well as **contents of databases** used by the app. 
 - [Summary](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/5-summary/)
