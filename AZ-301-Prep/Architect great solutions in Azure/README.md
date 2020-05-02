@@ -229,4 +229,41 @@
         - Region pairs
   - Testing a disaster recovery plan
 - [Protect your data with backup and restore](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/4-backup-and-restore/)
+  - To establish backup requirements for your app, group your application's data based on the following requirements:
+    - These concepts map neatly to the concepts of Recovery Point Objective and Recovery Time Objective (RPO and RTO). 
+    - The duration of acceptable loss will generally translate directly to required backup intervals and RPO.
+    - The maximum amount of time a restore takes corresponds to the RTO for the data component of your application. 
+    - Both requirements should be developed **relative to the cost** of achieving them.
+  - Azure backup and restore capabilities
+    - **Azure Backup**
+      - **Azure Backup** is a family of backup products that back up data to **Azure Recovery Services** vaults for storage and recovery. 
+      - **Azure Backup** serves as a **general-purpose** backup solution for cloud and on-premises workflows that run on VMs or physical servers.
+      - It's designed to be a **drop-in replacement for traditional backup solutions** that stores data in Azure instead of archive tapes or other local physical media. 
+      - **Recovery Service vaults** are storage resources in Azure that are dedicated to holding data and configuration backups for virtual machines, servers, and individual workstations and workloads.
+      - Four different products and services can use Azure Backup to create backups:
+        - **Azure Backup Agent**
+          - is a small Windows application
+          - Once you download and install it onto a Windows server or VM, you can configure it to create backups up to three times a day.
+        - **System Center Data Protection Manager**
+          - is a robust, fully featured, enterprise-level backup and recovery system.
+          - Data Protection Manager is part of the System Center family of products and is licensed and sold with System Center, but it's considered part of the Azure Backup family because it can store backups in an Azure Recovery vault.
+        - **Azure Backup Server**
+          - is similar to **Data Protection Manager**, but it's licensed as part of an Azure subscription and doesn't require a System Center license.
+        - **Azure IaaS VM Backup**
+          - is a turnkey backup and restore feature of Azure Virtual Machines.
+          - VM backup supports once-per-day backups for Windows and Linux virtual machines.
+  - **NOTE**: Both **Azure Backup** and **Azure Site Recovery** use **Azure Recovery Service vaults** for storage. 
+    - **Azure Backup** is a general-purpose backup solution. 
+    - **Azure Site Recovery** can coordinate replication and failover and support low RPO and RTO disaster recovery operations.
+  - **Azure Blob storage**
+    - Azure Storage doesn't include an automated backup feature, but blobs are commonly used to back up all kinds of data from various sources. 
+    - Immutable blob storage is configurable to be non-erasable and non-modifiable for a user-specified interval. Immutable blob storage was designed primarily to fulfill strict requirements for certain kinds of data, such as financial data.
+  - **Azure SQL Database**
+    - Comprehensive, automatic backup functionality **is included** with Azure SQL Database at **no extra charge**.
+    - **Enabled by default**
+    - **Full backups are created weekly**, with **differential backups performed every 12 hours**, and **log backups created every five minutes**.
+    - Backups created by the service can be used to restore a database to a **specific point in time**, even if it's been deleted.
+  - **Azure App Service**
+    - Web applications hosted in the Azure App Service Standard and Premium tiers support turnkey scheduled and manual backups. 
+    - Backups include **configuration** and **file contents** as well as **contents of databases** used by the app. 
 - [Summary](https://docs.microsoft.com/en-au/learn/modules/design-for-availability-and-recoverability-in-azure/5-summary/)
