@@ -48,8 +48,8 @@ Revisited 2020 May
   - 6 .Azure Service Bus
   - README
 - Architect migration, business continuity, and disaster recovery in Azure
-  - 1 .Design your migration (Done)
-  - 2 .Protect on-premiseswith Azure Site Recovery
+  - 1 .Design your migration **(Done)**
+  - 2 .Protect on-premiseswith Azure Site Recovery **(Done)**
   - 3 .Protect Azure withAzure Site Recovery
   - 4 .Azure Backup
   - 5 .Restore Azure SQLdatabase
@@ -58,7 +58,7 @@ Revisited 2020 May
   - 8 .Scale up and scaleout
   - 9 .Geographicallydistributed application
   - README
-- Architect network infrastructure in Azure (Done)
+- Architect network infrastructure in Azure **(Done)**
   - 1 .VPN Gateway
   - 2 .ExpressRoute
   - 2 .Network security groups
@@ -78,5 +78,5 @@ Revisited 2020 May
   - 4 .Highly available storage
   - 5 .Secure Storage account
   - README
-- Architect great solutions in Azure (Done)
+- Architect great solutions in Azure **(Done)**
   - README
