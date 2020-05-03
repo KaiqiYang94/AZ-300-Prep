@@ -50,7 +50,7 @@ Revisited 2020 May
 - Architect migration, business continuity, and disaster recovery in Azure
   - 1 .Design your migration **(Done)**
   - 2 .Protect on-premiseswith Azure Site Recovery **(Done)**
-  - 3 .Protect Azure withAzure Site Recovery
+  - 3 .Protect Azure withAzure Site Recovery **(Done)**
   - 4 .Azure Backup
   - 5 .Restore Azure SQLdatabase
   - 6 .Scale sets
